@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="9269051c-2395-4b6b-87f3-ca0c8399c74f" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="c1d12abb-6463-4e5f-a075-9353f777842e" >
+		<http:request-connection host="localhost" port="8081" />
+	</http:request-config>
+	<flow name="sampleFlow" doc:id="f2b1c0a4-0fc1-4bcc-a577-1cc28a36dc3f" >
+		<http:listener doc:name="Listener" doc:id="9cb256ad-8ec1-4785-96b7-2474167ccffd" config-ref="HTTP_Listener_config" path="/sample"/>
+		<http:request method="GET" doc:name="Request" doc:id="eaf6a1cb-6227-4c64-9743-57e925720d42" config-ref="HTTP_Request_configuration" path="/"/>
+	</flow>
+</mule>
