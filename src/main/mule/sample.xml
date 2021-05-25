@@ -12,6 +12,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:request-config>
 	<flow name="sampleFlow" doc:id="f2b1c0a4-0fc1-4bcc-a577-1cc28a36dc3f" >
 		<http:listener doc:name="Listener" doc:id="9cb256ad-8ec1-4785-96b7-2474167ccffd" config-ref="HTTP_Listener_config" path="/sample"/>
+		<logger level="INFO" doc:name="Logger" doc:id="3971bb60-60da-4dbf-af12-7587ef9bd971" />
 		<http:request method="GET" doc:name="Request" doc:id="eaf6a1cb-6227-4c64-9743-57e925720d42" config-ref="HTTP_Request_configuration" path="/"/>
 	</flow>
 </mule>
